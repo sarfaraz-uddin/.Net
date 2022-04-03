@@ -1,0 +1,33 @@
+﻿@model List<Sarfaraz.Models.employee>
+@{
+    ViewBag.Title = "Index1";
+    int sn = 0;
+}
+<style>
+    .table {
+        background-color: black;
+        color: white;
+    }
+</style>
+<a href="@Url.Action("hahhahah")">Add new record</a>
+<h2>Index1</h2>
+<table class="table" border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Address</th>
+        <th>Edit</th>
+
+
+    </tr>
+    @foreach (var data in Model)
+    {
+        <tr>
+            <td>@(++sn)</td>
+            <td>@(data.emp_name)</td>
+            <td>@(data.emp_address)</td>
+            <td><a href="@Url.Action("edit",new { id = data.emp_id })">Edit</a></td>
+
+        </tr>
+    }
+</table>

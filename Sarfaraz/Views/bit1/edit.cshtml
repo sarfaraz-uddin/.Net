@@ -1,0 +1,23 @@
+﻿@model Sarfaraz.Models.employee
+@{
+    ViewBag.Title = "edit";
+}
+
+<h2>edit</h2>
+@using (Html.BeginForm("Updatedata", "bit1"))
+{
+    <input type="hidden" name="emp_id" value="@Model.emp_id"/>
+    <label class="col-md-2">Name</label>
+    <div class="col-md-4">
+        <input type="text" name="emp_name" class="form-control" value="@Model.emp_name"/>
+    </div>
+    <label class="col-md-2">Address</label>
+    <div class="col-md-4">
+        <input type="text" name="emp_address" class="form-control" value="@Model.emp_address"/>
+    </div>
+    <label class="col-md-2">Contact</label>
+
+    <div class="col-md-2">
+        <input type="submit" class="btn btn-success" value="Save" />
+    </div>
+}

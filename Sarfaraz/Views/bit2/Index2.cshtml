@@ -1,0 +1,35 @@
+﻿@model List<Sarfaraz.Models.doctor>
+@{
+    ViewBag.Title = "Index2";
+    int sn = 0;
+}
+<style>
+    .table {
+        background-color: black;
+        color: white;
+    }
+</style>
+<a href="@Url.Action("doc")">Add new record</a>
+<h2>Index2</h2>
+<table class="table" border="1">
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Contact</th>
+        <th>Edit</th>
+
+
+    </tr>
+    @foreach (var data in Model)
+    {
+        <tr>
+            <td>@(++sn)</td>
+            <td>@(data.d_name)</td>
+            <td>@(data.contact)</td>
+            <td><a href="@Url.Action("edit1",new { id = data.d_id })">Edit</a></td>
+            <td><a href="@Url.Action("deletedata",new { d_id = data.d_id })">Delete</a></td>
+
+        </tr>
+    }
+</table>
+
