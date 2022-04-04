@@ -14,8 +14,19 @@ namespace Sarfaraz.Models
     
     public partial class employee
     {
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
+        public employee()
+        {
+            this.employee_salary_details = new HashSet<employee_salary_details>();
+        }
+    
         public int emp_id { get; set; }
         public string emp_name { get; set; }
         public string emp_address { get; set; }
+    
+        public virtual employee employee1 { get; set; }
+        public virtual employee employee2 { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<employee_salary_details> employee_salary_details { get; set; }
     }
 }

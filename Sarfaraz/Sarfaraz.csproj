@@ -130,6 +130,7 @@
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="Controllers\bit1Controller.cs" />
     <Compile Include="Controllers\bit2Controller.cs" />
+    <Compile Include="Controllers\bit3Controller.cs" />
     <Compile Include="Controllers\bitController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Global.asax.cs">
@@ -139,6 +140,9 @@
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\employee.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Models\employee_salary_details.cs">
       <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Models\Model1.Context.cs">
@@ -221,6 +225,9 @@
     <Content Include="Views\bit2\Index2.cshtml" />
     <Content Include="Views\bit2\doc.cshtml" />
     <Content Include="Views\bit2\edit1.cshtml" />
+    <Content Include="Views\bit3\Index3.cshtml" />
+    <Content Include="Views\bit3\edit2.cshtml" />
+    <Content Include="Views\bit3\salary.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

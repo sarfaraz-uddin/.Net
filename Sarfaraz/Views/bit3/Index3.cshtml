@@ -1,0 +1,37 @@
+﻿@model List<Sarfaraz.Models.employee_salary_details>
+@{
+    ViewBag.Title = "Index3";
+    int sn = 0;
+}
+<style>
+    .table {
+        background-color: black;
+        color: white;
+    }
+</style>
+<a href="@Url.Action("salary")">Add new record</a>
+<h2>Index2</h2>
+<table class="table" border="1">
+    <tr>
+        <th>ID</th>
+        <th>employee_id</th>
+        <th>salary_paid</th>
+        <th>paid_date</th>
+        <th>Edit</th>
+
+
+    </tr>
+    @foreach (var data in Model)
+    {
+<tr>
+    <td>@(++sn)</td>
+    <td>@(data.employee_id)</td>
+    <td>@(data.salary_paid)</td>
+    <td>@(data.paid_date)</td>
+    <td><a href="@Url.Action("edit1",new { id = data.employee_id })">Edit</a></td>
+    <td><a href="@Url.Action("deletedata",new { id = data.id })">Delete</a></td>
+
+</tr>
+    }
+</table>
+

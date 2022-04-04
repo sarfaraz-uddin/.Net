@@ -5,9 +5,12 @@
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
       <Diagram DiagramId="0e1284d8f4ee4a16b2a08d8869da2e38" Name="Diagram1">
-        <EntityTypeShape EntityType="StudentModel.doctor" Width="1.5" PointX="0.75" PointY="0.75" />
-        <EntityTypeShape EntityType="StudentModel.employee" Width="1.5" PointX="2.75" PointY="0.75" />
-        <EntityTypeShape EntityType="StudentModel.Std" Width="1.5" PointX="0.75" PointY="3.75" />
+        <EntityTypeShape EntityType="StudentModel.doctor" Width="1.5" PointX="0.75" PointY="4.75" />
+        <EntityTypeShape EntityType="StudentModel.employee" Width="1.5" PointX="0.75" PointY="0.875" />
+        <EntityTypeShape EntityType="StudentModel.employee_salary_details" Width="1.5" PointX="3" PointY="1" />
+        <EntityTypeShape EntityType="StudentModel.Std" Width="1.5" PointX="2.75" PointY="4.75" />
+        <AssociationConnector Association="StudentModel.FK_employee_employee" />
+        <AssociationConnector Association="StudentModel.FK_employee_salary_details_employee" />
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
