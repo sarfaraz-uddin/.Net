@@ -20,13 +20,12 @@ namespace Sarfaraz.Controllers
         public ActionResult salary()
         {
             List<employee_salary_details> all_data = db.employee_salary_details.ToList();
+            var empList = db.employees.ToList();
+            //viewbag empList=empList;
+            ViewBag.employeeList = new SelectList(empList, "emp_id", "emp_name");
             return View(all_data);
         }
-        public ActionResult create()
-        {
-
-            return View();
-        }
+      
         public ActionResult savedata(employee_salary_details employee_Salary_Details)
         {
             db.employee_salary_details.Add(employee_Salary_Details);
@@ -35,6 +34,9 @@ namespace Sarfaraz.Controllers
         }
         public ActionResult edit2(int id)
         {
+            var empList = db.employees.ToList();
+            //viewbag empList=empList;
+            ViewBag.employeeList = new SelectList(empList, "emp_id", "emp_name");
             employee_salary_details employee_Salary_Details = db.employee_salary_details.Find(id);
             //employee data=db.employees.firstordefault(x=>x.id==id);
             return View(employee_Salary_Details);

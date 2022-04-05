@@ -6,6 +6,10 @@
 <h2>edit2</h2>
 @using (Html.BeginForm("Updatedata", "bit3"))
 {
+    <div class="col-md-2">
+        <label>Employee Name </label>
+        @Html.DropDownList("employeeList", null, "Select", htmlAttributes: new { @Name = "employee_id", @class = "Form-control" });
+    </div>
     <input type="hidden" name="id" value="@Model.id" />
     <label class="col-md-2">Employee_id</label>
     <div class="col-md-4">

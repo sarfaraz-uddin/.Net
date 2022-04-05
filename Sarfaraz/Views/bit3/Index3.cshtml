@@ -14,6 +14,7 @@
 <table class="table" border="1">
     <tr>
         <th>ID</th>
+        <th>employee_name</th>
         <th>employee_id</th>
         <th>salary_paid</th>
         <th>paid_date</th>
@@ -25,10 +26,11 @@
     {
 <tr>
     <td>@(++sn)</td>
+    <td>@data.employee.emp_name</td>
     <td>@(data.employee_id)</td>
     <td>@(data.salary_paid)</td>
     <td>@(data.paid_date)</td>
-    <td><a href="@Url.Action("edit1",new { id = data.employee_id })">Edit</a></td>
+    <td><a href="@Url.Action("edit2",new { id = data.id })">Edit</a></td>
     <td><a href="@Url.Action("deletedata",new { id = data.id })">Delete</a></td>
 
 </tr>

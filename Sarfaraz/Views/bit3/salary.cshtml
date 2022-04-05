@@ -3,12 +3,14 @@
 }
 
 <h2>Salary</h2>
+@using (Html.BeginForm("savedata", null, FormMethod.Post))
+{
 <form action="savedata">
-    <label class="col-md-2">Employee_id</label>
-    <div class="col-md-4">
-        <input type="text" name="employee_id" class="form-control" />
+    
+    <div class="col-md-2">
+        <label>Employee Name </label>
+        @Html.DropDownList("employeeList", null, "Select", htmlAttributes: new { @Name = "employee_id", @class = "Form-control" });
     </div>
-
     <label class="col-md-2">Salary_paid</label>
     <div class="col-md-4">
         <input type="text" name="salary_paid" class="form-control" />
@@ -21,3 +23,4 @@
         <input type="submit" class="btn btn-success" value="Save" />
     </div>
 </form>
+}
