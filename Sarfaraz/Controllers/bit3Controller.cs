@@ -25,6 +25,22 @@ namespace Sarfaraz.Controllers
             ViewBag.employeeList = new SelectList(empList, "emp_id", "emp_name");
             return View(all_data);
         }
+        [HttpPost]
+        public ActionResult Index3(DateTime? dat,DateTime? datt,string nam)
+        {
+            var results = db.employee_salary_details.ToList();
+            if(dat!=null && datt!=null)
+            {
+                results = results.Where(x => x.paid_date >= dat && x.paid_date <= datt).ToList();
+            }
+            if(nam!=null && nam!="")
+            {
+                results = results.Where(x=>x.employee.emp_name == nam).ToList();
+            }
+            return View(results);
+        }
+        
+
       
         public ActionResult savedata(employee_salary_details employee_Salary_Details)
         {
